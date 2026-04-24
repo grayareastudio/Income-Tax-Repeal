@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — American Defenders</title>
+  <meta name="description" content="Contact American Defenders. Corrections, scholarly collaboration, press, and legislative briefings." />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Form styles — scoped to this page */
+    .form-wrap { max-width: 720px; }
+    .form-row { margin-bottom: 22px; }
+    .form-row label {
+      display: block;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 8px;
+    }
+    .form-row input[type="text"],
+    .form-row input[type="email"],
+    .form-row select,
+    .form-row textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--hair);
+      background: #fff;
+      font: inherit;
+      font-family: Georgia, serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ink);
+      border-radius: 0;
+      box-sizing: border-box;
+      transition: border-color .15s ease;
+    }
+    .form-row input:focus,
+    .form-row select:focus,
+    .form-row textarea:focus {
+      outline: none;
+      border-color: var(--ink);
+    }
+    .form-row textarea { resize: vertical; min-height: 140px; }
+    .form-row select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='%230A0A0A' stroke-width='1.5' fill='none'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 38px;
+    }
+    .form-row .hint {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      color: var(--mute);
+      margin-top: 6px;
+      font-style: italic;
+    }
+    .form-actions { margin-top: 28px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+    .form-actions .fine { font-size: 13px; color: var(--mute); }
+    .honeypot { position: absolute; left: -9999px; }
+    .form-split { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    @media (max-width: 700px) { .form-split { grid-template-columns: 1fr; gap: 0; } }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="inner">
+    <a href="index.html" class="wordmark">American Defenders<span class="dot"> .</span></a>
+    <nav class="primary">
+      <a href="index.html">Home</a>
+      <a href="case.html">The Case</a>
+      <a href="proposal.html">The Proposal</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="repository.html">Repository</a>
+      <a href="act.html">Take Action</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <p class="eyebrow">Corrections &nbsp;·&nbsp; Collaboration &nbsp;·&nbsp; Press &nbsp;·&nbsp; Briefings</p>
+    <h1 class="display" style="font-size:clamp(32px,4.5vw,56px);">Contact</h1>
+    <p class="lede">We read every message. A few notes before you write.</p>
+  </div>
+</section>
+
+<section style="border-top:1px solid var(--hair);">
+  <div class="container">
+    <div class="grid-2" style="align-items:start; gap:56px;">
+
+      <!-- Left column: guidance -->
+      <div>
+        <h3 style="margin-top:0;">What we respond to</h3>
+        <p style="margin-top:8px;">
+          <strong>Corrections.</strong> If you've found an error in a statute reference, case
+          citation, or historical characterization, please include the primary source. The
+          Repository will note material corrections alongside the updated document.
+        </p>
+        <p>
+          <strong>Scholarly collaboration.</strong> Peer review, rebuttals in good faith, and
+          new scholarship are welcome. Tell us what you're working on and how it connects.
+        </p>
+        <p>
+          <strong>Legislative briefings.</strong> We are available to brief Congressional and
+          state-legislature staff on the constitutional record and the replacement mechanism.
+        </p>
+        <p>
+          <strong>Press.</strong> Include your outlet, your deadline, and the specific question
+          you need addressed.
+        </p>
+        <p>
+          <strong>Organizing.</strong> Chapter and district organizers may request presentation
+          materials and regional coordination.
+        </p>
+
+        <div style="border-top:1px solid var(--hair); margin-top:24px; padding-top:18px;">
+          <p class="eyebrow">Direct email</p>
+          <p style="margin:6px 0 0 0;">
+            <a href="mailto:contact@americandefenders.example">contact@americandefenders.example</a>
+          </p>
+          <p style="font-size:13px; color:var(--mute); margin-top:10px;">
+            Replace with the chapter or organizational address before publishing.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right column: form -->
+      <div class="form-wrap">
+        <!--
+          This form is configured for Netlify Forms (the easiest free option). When the site
+          is deployed to Netlify, submissions will automatically arrive in the Netlify
+          dashboard and at the verified email of the site owner.
+
+          To use a different handler:
+            - Formspree: change `action` to your Formspree endpoint, remove data-netlify.
+            - Mailto:    change `action="mailto:your@address"` and method="POST", remove data-netlify.
+            - Getform / Basin / Web3Forms: change `action` to the provider endpoint.
+        -->
+        <form name="contact" method="POST" data-netlify="true"
+              netlify-honeypot="bot-field" action="thank-you.html">
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="honeypot">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+
+          <div class="form-split">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="affiliation">Role or Affiliation <span style="text-transform:none; letter-spacing:0; font-style:italic; color:var(--mute);">&nbsp;(optional)</span></label>
+            <input type="text" id="affiliation" name="affiliation"
+                   placeholder="e.g. Congressional staff · professor of constitutional law · state legislator" />
+          </div>
+
+          <div class="form-row">
+            <label for="purpose">Purpose</label>
+            <select id="purpose" name="purpose" required>
+              <option value="">Select one…</option>
+              <option>Correction or citation query</option>
+              <option>Scholarly collaboration</option>
+              <option>Legislative briefing</option>
+              <option>Press inquiry</option>
+              <option>Organizing or chapter inquiry</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="7" required
+              placeholder="For corrections, please cite the primary source. For press, include outlet and deadline. For briefings, include office or institution and preferred dates."></textarea>
+            <p class="hint">Plain text. No attachments required at first contact.</p>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn solid" style="cursor:pointer;">Send message</button>
+            <span class="fine">Replies typically within five business days.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="inner">
+    <div>
+      <h5>American Defenders</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="case.html">The Case</a></li>
+        <li><a href="proposal.html">The Proposal</a></li>
+        <li><a href="timeline.html">Timeline</a></li>
+        <li><a href="repository.html">Repository</a></li>
+        <li><a href="act.html">Take Action</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>The Pledge</h5>
+      <ul>
+        <li>I pledge allegiance to the Flag of the United States of America,</li>
+        <li>and to the Republic for which it stands,</li>
+        <li>one Nation under God, indivisible,</li>
+        <li>with liberty and justice for all.</li>
+      </ul>
+    </div>
+    <div class="rule">
+      <span>© American Defenders</span>
+      <span>Discipline · Documentation · Constitutional principle</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
